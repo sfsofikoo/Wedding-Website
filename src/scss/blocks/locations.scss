@@ -1,0 +1,126 @@
+.locations {
+  margin-top: 60px;
+  text-align: center;
+  padding: 200 0 200 0;
+}
+
+.locations__header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: 'Boska', headline 1;
+  font-style: regular;
+  color: #576250;
+  margin-bottom: 8px;
+  letter-spacing: -2px;
+}
+
+.locations__subtitle {
+  color: #B8C1B2;
+  font-size: 16px;
+  font-family: Calibri;
+  margin-bottom: 24px;
+}
+
+.locations__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 248px); 
+  gap: 16px; 
+  justify-content: center;
+}
+
+.location-card {
+  height: 153px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-card:hover {
+  transform: scale(1.05);
+}
+
+.location-card__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.location-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.location-card__image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.location-card__label {
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+  font-weight: 500;
+  font-family: Calibri;
+  font-size: 16px;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 2; 
+}
+
+.browse-more {
+  width: 248px;
+  height: 153px;
+  background-color: #576250;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.browse-more:hover {
+  transform: scale(1.05);
+}
+
+.browse-more__text {
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+}
+
+.browse-more__arrow {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 15px;
+  height: 15px;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  transform: rotate(135deg);
+}
+
+

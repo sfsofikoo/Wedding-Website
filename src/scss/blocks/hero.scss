@@ -1,0 +1,100 @@
+.hero {
+  background: url('../../img/bg.png') center/cover no-repeat;
+  color: #2c2c2c;
+  min-height: 100vh;
+  width: 100%;
+  
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__logo {
+    padding-top: 24px;
+    padding-left: 64px;
+
+    img {
+      width: 32px;
+      height: 44px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    padding-top: 34px;
+    padding-right: 64px;
+    gap: 40px;
+  }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+
+    a {
+      text-decoration: none;
+      color: #ffffff;
+      font-family: Calibri;
+      font-weight: 400;
+      font-size: 16px;
+
+      &:hover {
+        color: #998c6b;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 8px;
+    margin-left: 40px;
+    padding-right: 64px;
+    padding-top: 34px;
+
+    a img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__main {
+    text-align: center;
+    padding-top: 200px; 
+  }
+
+  &__title {
+    font-size: 56px;
+    font-weight: 700;
+    font-family: 'Boska', headline 1;
+    padding-top: -5px;
+    margin-bottom: 20px;
+    padding-right: 332px;
+    padding-left: 332px;
+    color: #576250;
+    font-style: light;
+  }
+
+  &__subtitle {
+    font-family: Calibri;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto 60px;
+    font-size: 18px;
+    color: #90998B;
+  }
+
+  &__scroll {
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
