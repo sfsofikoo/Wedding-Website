@@ -1,41 +1,48 @@
-/* Services Section */
 .services {
-  margin-top: 80px;
+  margin-top: 100px;
+  padding: 0 20px;
   text-align: center;
 }
-
 .services__title {
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 8px;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #2f2f2f;
 }
-
 .services__subtitle {
-  color: #666;
-  margin-bottom: 40px;
-  font-size: 16px;
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 48px;
 }
-
 .services__cards {
   display: flex;
   justify-content: center;
-  gap: 24px;
   flex-wrap: wrap;
+  gap: 32px;
 }
 
 .service-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  width: 180px;
-  transition: transform 0.3s ease;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 240px;
+  transition: all 0.3s ease;
 }
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 .service-card img {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 8px;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+.service-card p {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 16px;
+  margin: 0;
+  color: #333;
 }
