@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Website</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -13,20 +14,23 @@
                 <a href="#" class="hero__logo">
                     <img src="img/logo.png" alt="logo">
                 </a>
-                <nav class="hero__nav">
+                <div class="hero__nav-wrapper">
+                  <nav class="hero__nav">
                     <ul class="hero__menu">
-                        <li><a href="#">Browse</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Contact us</a></li>
+                      <li><a href="#">Browse</a></li>
+                      <li><a href="#">Services</a></li>
+                      <li><a href="#">Testimonials</a></li>
+                      <li><a href="#">Contact us</a></li>
                     </ul>
-                </nav>
-                <div class="hero__socials">
+                  </nav>
+                  <div class="hero__socials">
                     <a href="#"><img src="img/facebook.png" alt="Facebook" /></a>
                     <a href="#"><img src="img/instagram.png" alt="Instagram" /></a>
                     <a href="#"><img src="img/twit.png" alt="Twitter" /></a>
+                  </div>
                 </div>
-            </div>
+              </div>
+          
             <div class="hero__main">
                 <h1 class="hero__title">Discover your perfect Italian wedding venue</h1>
                 <p class="hero__subtitle">
@@ -123,26 +127,35 @@
           </section>
           
         <!-- Services Section -->
-<section class="services container">
-    <div class="services__header">
-        <h2 class="services__title">Services</h2>
-        <p class="services__subtitle">to plan and orchestrate your special occasion</p>
-    </div>
-    <div class="services__cards">
-        <div class="service-card">
-            <img src="img/Photography.jpg" alt="Photography">
-            <p>Photography</p>
-        </div>
-        <div class="service-card">
-            <img src="img/Ceremony.jpg" alt="Ceremony">
-            <p>Ceremony</p>
-        </div>
-        <div class="service-card">
-            <img src="img/Wedding.jpg" alt="Wedding Design">
-            <p>Wedding Design</p>
-        </div>
-    </div>
-</section>
+        <section class="services">
+          <div class="services__container">
+            <div class="services__header">
+              <div class="services__text-wrapper">
+                <h2 class="services__title">Services</h2>
+                <p class="services__subtitle">to plan and orchestrate your<br />special occasion</p>
+              </div>
+            </div>
+            <div class="services__vector">
+              <svg width="1440" height="363" viewBox="0 0 1440 363" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-82 332.995C-55.7625 334.67 -30.0131 336.308 -3.64146 336.485C97.3325 337.161 197.925 338.395 298.556 328.535C414.49 317.176 530.04 299.859 639.76 260.183C733.766 226.19 822.39 179.379 906.862 126.874C939.289 106.719 974.602 84.406 998.289 53.966C1002.5 47.6943 1007.33 35.4538 998.289 21.6943C992.903 13.4991 984 8.33429 974.43 6.08502C955.94 1.73922 930.053 1.94851 911.238 2.02968C878.571 2.17061 851.319 4.01738 819.049 9.33293C780.41 15.6977 728.975 31.002 697.5 54.1943C678.5 68.1943 666 83.6943 661.243 90.8079C656.026 98.6089 651.629 107.812 650.501 117.276C649.264 127.662 652.83 139.104 657.233 148.398C670.833 177.096 697.101 196.839 724.455 212.095C766.764 235.694 812.442 253.305 857.808 270.266C926.675 296.014 1006.03 282.048 1077.5 299.694C1122.46 310.795 1167.72 320.158 1213.23 328.828C1259 337.547 1304.8 346.785 1350.99 353.211C1407.57 361.085 1464.5 360.822 1521.52 360.822" stroke="#CAD1C6" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="services__cards">
+              <div class="service-card">
+                <img src="img/Photography.jpg" alt="Photography">
+                <p>Photography</p>
+              </div>
+              <div class="service-card">
+                <img src="img/Ceremony.jpg" alt="Ceremony">
+                <p>Ceremony</p>
+              </div>
+              <div class="service-card">
+                <img src="img/Wedding.jpg" alt="Wedding Design">
+                <p>Wedding Design</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
 <!-- Portfolios Section -->
 <section class="portfolios container">

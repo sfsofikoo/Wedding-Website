@@ -42,7 +42,7 @@ function serve() {
   watch('src/scss/**/*.scss', scssTask);
   watch('src/*.html', htmlTask);
   watch('src/js/**/*.js', jsTask);
-  watch('src/img/**/*', imgTask); // 🔥 Додаємо відстеження змін зображень
+  watch('src/img/**/*', imgTask); 
 }
 
 function fontsTask() {
