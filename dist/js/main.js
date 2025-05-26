@@ -1,81 +1,125 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-    // ===== Scroll on "↓ Scroll" button =====
-    const scrollBtn = document.querySelector('.hero__scroll');
-    scrollBtn?.addEventListener('click', () => {
-      window.scrollTo({
-        top: document.querySelector('.locations')?.offsetTop || 0,
-        behavior: 'smooth'
-      });
-    });
-  
-    // ===== Burger menu toggle =====
+document.addEventListener('DOMContentLoaded', function() {
+    // ========== Бургер-меню ==========
     const burger = document.querySelector('.burger-menu');
     const navWrapper = document.querySelector('.hero__nav-wrapper');
-    burger?.addEventListener('click', () => {
-      navWrapper?.classList.toggle('active'); // You need to add .active CSS styles (e.g. `display: block`)
+    const body = document.body;
+    
+    const overlay = document.createElement('div');
+    overlay.classList.add('nav-overlay');
+    document.body.appendChild(overlay);
+    
+    burger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navWrapper.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.classList.toggle('no-scroll');
     });
-  
-    // ===== Featured venue slider =====
-    const venues = [
-      {
-        image: 'img/Villa.jpg',
-        name: 'Villa Balbianello',
-        location: 'Lake Como',
-        description: `The whole complex consists of two residential buildings, a church, and a portico (known as Loggia Durini)...`,
-        note: `But the special feature of Villa Balbianello is above all the vast garden...`
-      },
-      {
-        image: 'img/Villa2.jpg',
-        name: 'Villa Erba',
-        location: 'Cernobbio',
-        description: `Villa Erba is a 19th-century villa surrounded by a beautiful park...`,
-        note: `The architecture and scenery are perfect for cinematic weddings...`
-      },
-      // ➕ Add more venue objects here
-    ];
-  
-    let currentVenue = 0;
-  
-    const updateVenue = () => {
-      const image = document.querySelector('.featured-venue__image img');
-      const name = document.querySelector('.venue__name');
-      const location = document.querySelector('.venue__location');
-      const desc = document.querySelector('.venue__description');
-      const note = document.querySelector('.venue__note');
-      const current = document.querySelector('.venue__current');
-      const total = document.querySelector('.venue__total');
-  
-      const venue = venues[currentVenue];
-      image.src = venue.image;
-      name.textContent = venue.name;
-      location.textContent = venue.location;
-      desc.textContent = venue.description;
-      note.innerHTML = venue.note + ' <a href="#" class="venue__more">View more</a>';
-      current.textContent = (currentVenue + 1).toString();
-      total.textContent = `/${venues.length}`;
-    };
-  
-    document.querySelector('.venue__arrow--left')?.addEventListener('click', () => {
-      currentVenue = (currentVenue - 1 + venues.length) % venues.length;
-      updateVenue();
+    
+    overlay.addEventListener('click', function() {
+        burger.classList.remove('active');
+        navWrapper.classList.remove('active');
+        this.classList.remove('active');
+        body.classList.remove('no-scroll');
     });
-  
-    document.querySelector('.venue__arrow--right')?.addEventListener('click', () => {
-      currentVenue = (currentVenue + 1) % venues.length;
-      updateVenue();
+    
+    // ========== Плавний скрол для навігації ==========
+    document.querySelectorAll('.hero__menu a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Закриваємо меню на мобільних
+            if (window.innerWidth <= 768) {
+                burger.classList.remove('active');
+                navWrapper.classList.remove('active');
+                overlay.classList.remove('active');
+                body.classList.remove('no-scroll');
+            }
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-  
-    updateVenue(); // Initial load
-  
-    // ===== Browse More Scroll Left (optional enhancement) =====
+
+    // ========== Скрол до наступного розділу ==========
+    const scrollButton = document.querySelector('.hero__scroll');
+    if (scrollButton) {
+        scrollButton.addEventListener('click', function() {
+            const nextSection = document.querySelector('.locations');
+            if (nextSection) {
+                window.scrollTo({
+                    top: nextSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+
+    // ========== Навігація місць (Browse more) ==========
     const browseMore = document.querySelector('.browse-more');
-    browseMore?.addEventListener('click', () => {
-      document.querySelector('.locations__grid')?.scrollTo({
-        left: 0,
-        behavior: 'smooth'
-      });
+    if (browseMore) {
+        browseMore.addEventListener('click', function() {
+            const contactSection = document.querySelector('.contact');
+            if (contactSection) {
+                window.scrollTo({
+                    top: contactSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+
+    // ========== Слайдер Featured Venues ==========
+    let currentVenueIndex = 1;
+    const totalVenues = 10;
+    const currentPage = document.querySelector('.venue__current');
+    
+    // Обробники кнопок навігації
+    document.querySelector('.venue__arrow--left').addEventListener('click', function() {
+        if (currentVenueIndex > 1) {
+            currentVenueIndex--;
+            currentPage.textContent = currentVenueIndex;
+        }
     });
-  
-  });
-  
+    
+    document.querySelector('.venue__arrow--right').addEventListener('click', function() {
+        if (currentVenueIndex < totalVenues) {
+            currentVenueIndex++;
+            currentPage.textContent = currentVenueIndex;
+        }
+    });
+
+    // ========== Валідація форми ==========
+    const contactForm = document.querySelector('.contact__form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const inputs = this.querySelectorAll('.contact__input, .contact__textarea');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (input.value.trim() === '') {
+                    input.style.borderColor = 'red';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = '';
+                }
+            });
+            
+            if (isValid) {
+                alert('Form submitted successfully!');
+                this.reset();
+            } else {
+                alert('Please fill all fields correctly!');
+            }
+        });
+    }
+});

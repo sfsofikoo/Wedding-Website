@@ -25,10 +25,10 @@
                 <div class="hero__nav-wrapper">
                   <nav class="hero__nav">
                     <ul class="hero__menu">
-                      <li><a href="#">Browse</a></li>
-                      <li><a href="#">Services</a></li>
-                      <li><a href="#">Testimonials</a></li>
-                      <li><a href="#">Contact us</a></li>
+                      <li><a href="#browse">Browse</a></li>
+                      <li><a href="#services">Services</a></li>
+                      <li><a href="#testimonials">Testimonials</a></li>
+                      <li><a href="#contact">Contact us</a></li>
                     </ul>
                   </nav>
                   <div class="hero__socials">
@@ -52,7 +52,7 @@
         </div>
     </header>
     <main>
-        <section class="locations container">
+        <section id ="browse" class="locations container">
             <div class="locations__header">
                 <h2 class="locations__title">Locations</h2>
                 <p class="locations__subtitle">that you will remember forever</p>
@@ -135,7 +135,7 @@
             </div>
           </section>
           
-        <section class="services">
+        <section id="services" class="services">
           <div class="services__container">
             <div class="services__header">
               <div class="services__text-wrapper">
@@ -205,47 +205,87 @@
 
   </div>
 </section>
-<section class="testimonials container">
+<section id="testimonials" class="testimonials container">
   <div class="testimonials__header">
     <h2 class="testimonials__title">Testimonials</h2>
-    <p class="testimonials__subtitle">what our happy couples say</p>
+    <p class="testimonials__subtitle">from happy, delighted couples</p>
   </div>
-  <div class="testimonials__grid">
+
+  <div class="testimonials__slider">
+    <button class="venue__arrow venue__arrow--left">&#8592;</button>
+
     <div class="testimonial-card">
       <p class="testimonial-card__text">
-        “Absolutely magical! The team made our wedding day truly unforgettable. Every detail was perfect.”
+        <span class="quote">“</span>
+        Lorem ipsum sit ac suspendisse adipiscing eget aliquam fermentum rutrum tempus aenean.     <span class="quote">”</span>
+        Suspendisse nascetur vulputate viverra varius eu ullamcorper. Cursus pellentesque erat eget
+        eget ullamcorper id in. Nullam scelerisque varius viverra augue quis. Laoreet eget curabitur
+        vitae sed at facilisis purus convallis imperdiet.
+        <br><br>
+        Penatibus auctor diam vivamus amet a vehicula ultrices. Volutpat arcu in amet praesent nisl
+        mattis etiam<br>
+        cras orci. Ut urna elementum sapien orci lacus!
       </p>
-      <span class="testimonial-card__author">— Emily & Lucas</span>
+      <img src="img/person.jpg" alt="User avatar" class="testimonial-card__avatar" />
+      <span class="testimonial-card__author">Joy & Jordan</span>
     </div>
-    <div class="testimonial-card">
-      <p class="testimonial-card__text">
-        “Thank you for creating such a beautiful and stress-free experience. We couldn’t have asked for more.”
-      </p>
-      <span class="testimonial-card__author">— Maria & Alessandro</span>
-    </div>
-    <div class="testimonial-card">
-      <p class="testimonial-card__text">
-        “The venues, the planning, the service – everything exceeded our expectations.”
-      </p>
-      <span class="testimonial-card__author">— Hannah & Marco</span>
-    </div>
+
+    <button class="venue__arrow venue__arrow--right">&#8594;</button>
   </div>
 </section>
-<section class="contact container">
+
+
+<section id="contact" class="contact container">
   <div class="contact__wrapper">
-    <h2 class="contact__title">Contact Us</h2>
-    <p class="contact__subtitle">We'd love to hear about your plans</p>
-    <form class="contact__form">
-      <input type="text" class="contact__input" placeholder="Your Name" required>
-      <input type="email" class="contact__input" placeholder="Your Email" required>
-      <textarea class="contact__textarea" placeholder="Tell us about your wedding..." required></textarea>
-      <button type="submit" class="contact__button">Send Message</button>
-    </form>
+    <div class="contact__content">
+      <div class="contact__form-box">
+        <h2 class="contact__title">Contact Us</h2>
+        <p class="contact__subtitle">We are excited to get planning!</p>
+        <form class="contact__form">
+          <input type="text" class="contact__input" placeholder="Name" required>
+          <input type="email" class="contact__input" placeholder="Email" required>
+          <input type="tel" class="contact__input" placeholder="Phone" required>
+          <input type="text" class="contact__input" placeholder="Who’s getting married?" required>
+          <input type="text" class="contact__input" placeholder="Partner 1" required>
+          <input type="text" class="contact__input" placeholder="Partner 2" required>
+          <input type="text" class="contact__input" placeholder="Date (MM/YY)" required>
+          <input type="number" class="contact__input" placeholder="Guests" required>
+          <textarea class="contact__textarea" placeholder="Additional message..."></textarea>
+          <button type="submit" class="contact__button">Send</button>
+        </form>
+      </div>
+
+      <div class="contact__info-box">
+        <h3 class="contact__info-title">Head office</h3>
+        <p class="contact__info-text">Via Roma, 123<br>20121 Milano (MI)<br>Italy</p>
+        <p class="contact__info-text"><strong>Phone:</strong> +39 (0)322 221211<br><strong>Mobile:</strong> +39 328 2211212</p>
+
+        <div class="contact__map">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.9253449606974!2d9.18998221576141!3d45.46420397910009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6a3c0a1fc0f%3A0x38b1aab9a50863a0!2sVia%20Roma%2C%20123%2C%2020121%20Milano%20MI%2C%20Italy!5e0!3m2!1sen!2sus!4v1673946550927!5m2!1sen!2sus" 
+            width="100%" 
+            height="200" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div class="contact__socials">
+          <p class="contact__info-text">Follow us</p>
+          <div class="contact__icons">
+            <a href="#" aria-label="Facebook"><img src="icons/facebook.svg" alt="Facebook"></a>
+            <a href="#" aria-label="Instagram"><img src="icons/instagram.svg" alt="Instagram"></a>
+            <a href="#" aria-label="Pinterest"><img src="icons/pinterest.svg" alt="Pinterest"></a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
     </main>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
