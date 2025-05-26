@@ -15,6 +15,7 @@
       flex-wrap: wrap;
       gap: 48px;
       justify-content: space-between;
+      align-items: center;
     }
   
     &__form-box {
@@ -116,16 +117,17 @@
     }
   
     &__icons {
-      display: flex;
-      gap: 16px;
+        display: flex;
+        gap: 8px;
+        color: #90998B;
   
       img {
         width: 24px;
         height: 24px;
-        transition: transform 0.2s;
+        transition: transform 0.2s ease;
   
         &:hover {
-          transform: scale(1.1);
+            transform: scale(1.1);
         }
       }
     }

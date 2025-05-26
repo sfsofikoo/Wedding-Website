@@ -603,6 +603,7 @@
   flex-wrap: wrap;
   gap: 48px;
   justify-content: space-between;
+  align-items: center;
 }
 .contact__form-box {
   flex: 1 1 50%;
@@ -689,12 +690,13 @@
 }
 .contact__icons {
   display: flex;
-  gap: 16px;
+  gap: 8px;
+  color: #90998B;
 }
 .contact__icons img {
   width: 24px;
   height: 24px;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
 .contact__icons img:hover {
   transform: scale(1.1);
