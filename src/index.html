@@ -6,14 +6,22 @@
     <title>Wedding Website</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
     </head>
 <body>
     <header class="hero">
         <div class="hero__content container">
-            <div class="hero__top">
+          <div class="hero__top">
+            <div class="hero__top-container">
                 <a href="#" class="hero__logo">
                     <img src="img/logo.png" alt="logo">
                 </a>
+                <button class="burger-menu">
+                  <span class="burger-line"></span>
+                  <span class="burger-line"></span>
+                  <span class="burger-line"></span>
+              </button>
+            </div>
                 <div class="hero__nav-wrapper">
                   <nav class="hero__nav">
                     <ul class="hero__menu">
@@ -36,12 +44,14 @@
                 <p class="hero__subtitle">
                     Sagittis adipiscing posuere id adipiscing aliquam posuere. Aliquet faucibus duis accumsan aliquet tempor diam dignissim suscipit. Nibh urna ut diam fames.
                 </p>
-                <div class="hero__scroll">Scroll</div>
+                <div class="hero__scroll">
+                  <span class="arrow">↓</span>
+                  Scroll
+                </div>
             </div>
         </div>
     </header>
     <main>
-        <!-- Locations Section -->
         <section class="locations container">
             <div class="locations__header">
                 <h2 class="locations__title">Locations</h2>
@@ -99,7 +109,6 @@
             </div>
         </section>
     
-        <!-- Featured Venue Section -->
         <section class="featured-venue container">
             <h3 class="featured-venue__heading">Featured venues</h3>
             <div class="featured-venue__card">
@@ -126,7 +135,6 @@
             </div>
           </section>
           
-        <!-- Services Section -->
         <section class="services">
           <div class="services__container">
             <div class="services__header">
@@ -157,7 +165,6 @@
           </div>
         </section>
 
-<!-- Portfolios Section -->
 <section class="portfolios container">
   <div class="portfolios__header">
     <h2 class="portfolios__title">Our portfolios</h2>
@@ -198,6 +205,47 @@
 
   </div>
 </section>
+<section class="testimonials container">
+  <div class="testimonials__header">
+    <h2 class="testimonials__title">Testimonials</h2>
+    <p class="testimonials__subtitle">what our happy couples say</p>
+  </div>
+  <div class="testimonials__grid">
+    <div class="testimonial-card">
+      <p class="testimonial-card__text">
+        “Absolutely magical! The team made our wedding day truly unforgettable. Every detail was perfect.”
+      </p>
+      <span class="testimonial-card__author">— Emily & Lucas</span>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-card__text">
+        “Thank you for creating such a beautiful and stress-free experience. We couldn’t have asked for more.”
+      </p>
+      <span class="testimonial-card__author">— Maria & Alessandro</span>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-card__text">
+        “The venues, the planning, the service – everything exceeded our expectations.”
+      </p>
+      <span class="testimonial-card__author">— Hannah & Marco</span>
+    </div>
+  </div>
+</section>
+<section class="contact container">
+  <div class="contact__wrapper">
+    <h2 class="contact__title">Contact Us</h2>
+    <p class="contact__subtitle">We'd love to hear about your plans</p>
+    <form class="contact__form">
+      <input type="text" class="contact__input" placeholder="Your Name" required>
+      <input type="email" class="contact__input" placeholder="Your Email" required>
+      <textarea class="contact__textarea" placeholder="Tell us about your wedding..." required></textarea>
+      <button type="submit" class="contact__button">Send Message</button>
+    </form>
+  </div>
+</section>
     </main>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

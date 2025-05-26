@@ -83,7 +83,16 @@
 }
 .hero__scroll {
   font-size: 14px;
+  font-weight: 500;
+  font-family: Calibri;
   letter-spacing: 1px;
   opacity: 0.6;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero__scroll .arrow {
+  margin-right: 8px;
+  font-size: 18px;
 }
